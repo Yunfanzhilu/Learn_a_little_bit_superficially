@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+﻿import java.sql.SQLOutput;
 import java.util.*;
 
 import static java.lang.System.out;
@@ -498,7 +498,7 @@ public static void main(String[] args){
     BitTreeNode h=new BitTreeNode(8);
     BitTreeNode i=new BitTreeNode(9);
     BitTreeNode j=new BitTreeNode(10);
-    BitTreeNode k=new BitTreeNode(12);
+    BitTreeNode k=new BitTreeNode(13);
 
         a.left=b;
         a.right=c;
