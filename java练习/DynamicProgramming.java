@@ -8,6 +8,8 @@ public class DynamicProgramming {
     public static List<String>substring(String s)
     {
         int a1=12;
+        int b1=19;
+    
         char[] str=s.toCharArray();
         List<String>ans=new ArrayList<>();
         int i,j;
