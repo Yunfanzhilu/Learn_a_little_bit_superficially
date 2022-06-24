@@ -7,6 +7,7 @@ public class DynamicProgramming {
     //打印字符串的子串
     public static List<String>substring(String s)
     {
+        int a1=12;
         char[] str=s.toCharArray();
         List<String>ans=new ArrayList<>();
         int i,j;
