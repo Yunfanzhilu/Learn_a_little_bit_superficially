@@ -35,6 +35,19 @@ model.summary()
 model.fit(training_set,epochs=30)
 
 
+from PIL import Image
+import numpy as np
+# 加载图像
+img = Image.open('image_0011.jpg')
+# 调整图像大小为 50x50
+img_resized = img.resize((50, 50))
+# 将图像转换为 numpy 数组并添加一个维度表示批次大小
+pic = np.array(img_resized).reshape(1, 50, 50, 3)
+ans=model.predict(pic)
+print(ans)
+
+
+
 
 
 
