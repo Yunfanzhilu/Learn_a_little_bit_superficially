@@ -1,5 +1,5 @@
 """"
-这是一个基于keras的图像分类任务
+这是一个基于keras的图像分类任务，keras官方文档：https://keras-zh.readthedocs.io/why-use-keras/
 
 数据集：kaggle平台 CIFAR-10
 链接：https://www.kaggle.com/datasets/pankrzysiu/cifar10-python?resource=download
@@ -11,7 +11,9 @@ CIFAR-10 数据集：
 #load the data
 import pickle
 
+import keras
 import numpy as np
+
 from matplotlib import pyplot as plt
 from keras.preprocessing.image import ImageDataGenerator
 from keras_preprocessing.image import load_img, img_to_array
@@ -48,25 +50,32 @@ from keras.layers import Conv2D,MaxPool2D,Flatten,Dense
 
 model=Sequential()
 #卷积层
-model.add(Conv2D(32,(6,6),input_shape=(32,32,3),activation='relu'))
+model.add(Conv2D(32,(6,6),input_shape=(32,32,3),activation='elu'))
 #池化层
 model.add(MaxPool2D(pool_size=(2,2)))
 #卷积层
-model.add(Conv2D(32,(6,6),activation='relu'))
+model.add(Conv2D(32,(6,6),activation='elu'))
 #池化层
 model.add(MaxPool2D(pool_size=(2,2)))
 #展开
 model.add(Flatten())
 #全连接层
-model.add(Dense(units=128,activation='relu'))
-model.add(Dense(units=102,activation='softmax'))
+model.add(Dense(units=128,activation='elu'))
+model.add(Dense(units=10,activation='softmax'))
 
-#configure model
-model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
+#配置模型
+adma=keras.optimizers.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False)
+model.compile(optimizer=adma,loss='sparse_categorical_crossentropy',metrics=['accuracy'])
 model.summary()
 
+"""
+#也可以sgd作为优化器参数调节，可以参考keras文档
+sgd = optimizers.SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='mean_squared_error', optimizer=sgd)
+"""
+
 #train the model
-model.fit(X_train, y_train, epochs=60)
+model.fit(X_train, y_train, epochs=30)
 
 #save thr model
 model.save('CIFAR-10.h5')
