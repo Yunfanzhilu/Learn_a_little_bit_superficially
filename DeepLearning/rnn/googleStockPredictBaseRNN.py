@@ -1,3 +1,9 @@
+"""
+这是一个基于RNN的google股价预测项目
+数据集来源kaggle
+链接：https://www.kaggle.com/datasets/shreenidhihipparagi/google-stock-prediction
+
+"""
 import keras
 import matplotlib_inline
 import numpy as np
@@ -21,7 +27,7 @@ plt.xlabel('time')
 plt.ylabel('price')
 plt.show()
 """
-#define X and y
+#define input X and y
 def extract_data(data,time_step):
     X=[]
     y=[]
