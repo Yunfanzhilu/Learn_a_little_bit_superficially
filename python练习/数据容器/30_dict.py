@@ -1,5 +1,12 @@
 
 """
+列表   可修改            可重复
+元组   不可修改           可重复
+集合   支持部分可修改      不可重复
+字典   key不可重复 value可重复
+"""
+
+"""
 字典存储的元素是：键值对
 键可以是任何不可变类型，字符串和数字总是可以作为键，Value可以是任意数据类型
 """
@@ -51,9 +58,52 @@ for k,v in dict_tes.items():
 
 """
 Loc=["TOP","JUN","MID","BOT","SUP"]
-Per=["waywad","heng","fofo","stay","iwandy"]
+Per=["flandre","karsa","cool","ruler","meiko"]
 
-TeamWe={Loc:Per.upper() for Loc,Per in zip(Loc,Per)}
+Team_huang={Loc:Per.upper() for Loc,Per in zip(Loc,Per)}
+print(Team_huang)
+
+print('-----字典-------')
+dict01 = {'乔治': 87, '恩比德': 92, '约基奇': 96, '勒布朗': 96}
+
+print('-----获取字典-------')
+print(dict01['乔治'])
+print(dict01.get("乔治"))
+
+print('-----key的判断-------')
+print('勒布朗' in dict01)
+del dict01['乔治']
+print(dict01)
+dict01['库里'] = 97
+print(dict01)
+
+print('-----获取所有的key------')
+keys = dict01.keys()
+print(keys)
+print(type(keys))
+print(list(keys))
+
+print('-----获取所有的values------')
+values = dict01.values()
+print(values)
+print(type(values))
+print(list(values))
+
+print('-----获取所有的keys-values------')
+items = dict01.items()
+print(items)
+print(list(items))  # 元组
+
+print('------字典元素的遍历-------')
+for item in dict01:
+    print(item, dict01[item], dict01.get(item))
+print('hello,world')
+
+print('------字典生成式------')
+items = ['德布劳内', '哈兰德', '凯恩']
+prices = [97, 97, 94]
+d = {item: price for item, price in zip(items, prices)}
+print(d)
 
 
 

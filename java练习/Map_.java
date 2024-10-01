@@ -98,6 +98,7 @@ public class test01 {
         System.out.println(test02);
         System.out.println("test07="+test07);
         System.out.println("test03="+test03);
+        int test17=93;
 
     }
 

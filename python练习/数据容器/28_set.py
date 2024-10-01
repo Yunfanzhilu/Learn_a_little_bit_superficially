@@ -1,3 +1,11 @@
+
+"""
+列表   可修改            可重复
+元组   不可修改           可重复
+集合   支持部分可修改      不可重复
+字典   key不可重复 value可重复
+"""
+
 """
 1.python 支持集合  集合是由「」组成的「」容器？
 2.集合对象支持「」「」「」等数学运算？
@@ -6,9 +14,11 @@
 回顾：列表、元组的元素是可以「」并且「」？
 """
 set_a = {100, 200, 300, 300}
+set_a.add(700)
 basket = {'apple', 'banana', 'orange', 'apple', 'banana'}
 print(f"set_a的内容：{set_a},类型是：{type(set_a)}")
 print(f"basket：{basket},类型是：{type(basket)}")
+
 
 """
 4.集合支持索引吗？
@@ -110,3 +120,37 @@ print(sorted_set)
 
 set123={"jack1","jack21"}
 print(set123)
+
+print('------集合(类似hashset)------')
+collections01 = {2, 3, 3, 45, 6, 78}  # 不能重复,元素无序
+print(collections01)
+collections02 = set(range(6))
+print(collections02)
+list7 = [1, 1, 2, 2, 3, 4, 5, 6, 6, 6]
+collections02 = set(list7)
+print("列表转换集合，去掉重复元素", collections02)
+
+print('------集合相关操作------')
+collections03 = {10, 230, 40}
+print(10 in collections03)
+collections03.add(80)
+print(collections03)
+collections03.update({90, 100})
+print(collections03)
+collections03.remove(10)
+print(collections03)
+
+print('------集合间的关系------')
+collections04 = {10, 230}
+collections05 = {230, 240}
+print(collections04 == collections05)  # 集合是否相等
+print(collections05.issubset(collections04))  # 子集
+
+print(collections04.intersection(collections05))  # 交集
+print(collections04 & collections05)  # 交集
+print(collections04.union(collections05))  # 并集
+print(collections04 | collections05)  # 并集
+
+print('------集合生成式------')
+collections06 = {i for i in range(10)}
+print(collections06)
