@@ -154,3 +154,9 @@ print(collections04 | collections05)  # 并集
 print('------集合生成式------')
 collections06 = {i for i in range(10)}
 print(collections06)
+
+
+set_j={10,20,30}
+jk={100,200}
+print(f"set_j={set_j}")
+print(f"set_j={jk}")
