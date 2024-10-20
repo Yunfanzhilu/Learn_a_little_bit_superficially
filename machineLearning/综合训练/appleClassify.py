@@ -1,5 +1,6 @@
 """
 任务：根据original_data样本，建立模型，对test_data的图片进行苹果/西红柿判断(数据集中包含苹果和西红柿两类，由于两者形状颜色较为接近，区分起来有难度)
+
 1.数据增强，扩充确认为苹果的样本数量（略）
 2.特征提取，使用VGG16模型提取图像特征
 3.图片批量处理
@@ -7,6 +8,9 @@
 5.基于标签数据矫正结果，并可视化
 6.Meanshift模型提升模型表现
 7.数据降维PCA处理，提升模型表现
+
+数据集来源于kaggle平台
+https://www.kaggle.com/datasets/samuelcortinhas/apples-or-tomatoes-image-classification/discussion?sort=undefined
 """
 
 

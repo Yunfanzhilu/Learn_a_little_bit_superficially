@@ -160,3 +160,10 @@ set_j={10,20,30}
 jk={100,200}
 print(f"set_j={set_j}")
 print(f"set_j={jk}")
+ja={90,93,93}
+ja.add(97)
+print(ja)
+
+ab={100,200,3003}
+ab.add(600)
+print(f"ab={ab}")
