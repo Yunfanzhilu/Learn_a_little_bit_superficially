@@ -157,6 +157,21 @@ accuracy_train=accuracy_score(y_train,y_train_predict)
 print(accuracy_train)#0.96
 
 #预测测试集准确率
+test_img_path="appleClassify_/test/apples/img_p1_30.jpeg"
+test_img=load_img(test_img_path,target_size=(224,224))#224*224是VGG模型的要求
+test_img=img_to_array(test_img)
+x=np.expand_dims(test_img,axis=0)
+x=preprocess_input(x)
+features=model_vgg.predict(x)
+features=features.reshape(1,7*7*512)
+y_test_predict_prob=model.predict(features)
+threshold=0.5
+for i in y_test_predict_prob:
+    if i<0.5:
+        print("这是一张苹果的图片")
+    else:
+        print("这是一张西红柿的图片")
+
 
 
 
