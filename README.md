@@ -18,8 +18,9 @@
 ### 深度学习
 - cnn多物品分类基于keras(CIFAR-10)
 - RNN股价预测(goole stock)
+- 周杰伦歌词预测(jaychou)
 - 综合练习(苹果分类)
-- transformer架构学习
+- seq2seq的自然语言处理基于pytorch
 - 待续学习
 
 ### python基础学习
