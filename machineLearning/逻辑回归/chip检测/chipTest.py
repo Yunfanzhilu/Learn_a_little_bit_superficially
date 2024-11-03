@@ -1,6 +1,7 @@
 """
 该项目是芯片检测的模型
 使用逻辑回归的思想进行检测分类
+本练习数据集chip_test.csv
 """
 # load the data
 import matplotlib.pyplot as plt
