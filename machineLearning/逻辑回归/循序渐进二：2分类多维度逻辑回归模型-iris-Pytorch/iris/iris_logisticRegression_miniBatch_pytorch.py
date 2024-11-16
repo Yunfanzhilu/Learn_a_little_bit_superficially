@@ -24,12 +24,12 @@ import numpy as np
 1.Prepare dataset
 """
 
-"""
+
 Xy=np.loadtxt("iris.csv",delimiter=',',dtype=np.float32)
 X=torch.from_numpy(Xy[:,:-1])#所有行，第一列开始，最后一列不要
 y=torch.from_numpy(Xy[:,[-1]])#左右行，最后一列，[]表示需要矩阵，不写的话就是向量
 
-"""
+
 class irisDataset(Dataset):
     def __init__(self,filepath):
         self.Xy = np.loadtxt(filepath, delimiter=',', dtype=np.float32)
