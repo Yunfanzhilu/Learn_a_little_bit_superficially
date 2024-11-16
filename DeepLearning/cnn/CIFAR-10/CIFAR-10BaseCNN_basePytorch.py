@@ -1,6 +1,8 @@
 import torch
 from torch import nn
 from torch.nn import Conv2d, MaxPool2d, Flatten, Linear, Sequential
+import os
+
 
 
 class cifar_10_module(nn.Module):
@@ -49,7 +51,7 @@ class cifar_10_module(nn.Module):
         x = self.linear2(x)
         """
         return x
-"""
+
 cifar_10_module = cifar_10_module()
 print(cifar_10_module)
 input= torch.randn((64, 3, 32, 32))
@@ -60,5 +62,5 @@ torch.save(cifar_10_module.state_dict(),"module1.pth")
 #加载模型参数
 #加载模型参数
 cifar_10_module.load_state_dict("cifar_10_module_epoch1")
-"""
+
 
